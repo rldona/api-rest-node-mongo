@@ -1,16 +1,23 @@
 var express = require('express'),
 	mongoose = require('mongoose'),
-	app = express();
+	app = express(),
+	port = 5050;
 
-// app.configure(function() {
-// 	app.use(express.bodyParser());
-// 	app.use(express.methodOverride());
-// 	app.use(app.router);
-// });
+mongoose.connect('mongodb://localhost/movies', function(err, res) {
+	if(err) {
+		console.log('Error DB connection: ', err);
+	} else {
+		console.log('DB connection: OK');
+	}
+});
 
 app.get('/', function(req, res) {
 	res.send('hola mundo!!');
 });
 
-app.listen(5050);
-console.log('Sevidor Express escuchando en el puerto 5050');
+app.listen(port);
+console.log('Server listening port: ', port);
+
+
+
+
