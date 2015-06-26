@@ -1,23 +1,19 @@
+// Dependencies
 var express = require('express'),
-	mongoose = require('mongoose'),
-	app = express(),
-	port = 5050;
+		mongoose = require('mongoose'),
+		bodyParser = require('body-parser'),
+		app = express();
 
-mongoose.connect('mongodb://localhost/movies', function(err, res) {
-	if(err) {
-		console.log('Error DB connection: ', err);
-	} else {
-		console.log('DB connection: OK');
-	}
-});
+// MongoDB
+mongoose.connect('mongodb://localhost/rest_test');
 
-app.get('/', function(req, res) {
-	res.send('hola mundo!!');
-});
+// Express config
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.listen(port);
-console.log('Server listening port: ', port);
+// Routes
+app.use('/', require('./routes/api'));
 
-
-
-
+// Start server
+app.listen(5050);
+console.log('API is running on port 5050');
