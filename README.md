@@ -1,8 +1,6 @@
-# api-rest-node-mongo
-
 Api REST whith Node.js and MongoDB
 
-## How to install on Mac?
+## How to run the project on Mac?
 
 1. sudo npm install
 2. Install Brew: http://brew.sh/
