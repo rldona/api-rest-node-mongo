@@ -42,7 +42,7 @@ app.use('/api', movies);
 
 // Start server
 app.listen(3000, function() {
-	console.log('Server listening port 5000');
+	console.log('Server listening port 3000');
 });
 
 
