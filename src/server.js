@@ -1,14 +1,16 @@
 // Dependencies
 var express = require('express'),
-		mongoose = require('mongoose'),
-		bodyParser = require('body-parser'),
-		app = express();
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser'),
+    app = express();
 
 // MongoDB
 mongoose.connect('mongodb://localhost/rest_test');
 
 // Express config
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 
 // Routes
