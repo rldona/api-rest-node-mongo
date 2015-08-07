@@ -8,9 +8,7 @@ var app = express();
 mongoose.connect('mongodb://localhost/rest_test');
 
 // Express config
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
@@ -19,4 +17,4 @@ app.use('/', require('./routes/api'));
 
 // Start server
 app.listen(5050);
-console.log('API is running on port 5050');
+console.log('API is running on: http://localhost:5050/products/');
