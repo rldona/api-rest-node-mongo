@@ -1,6 +1,6 @@
 // Dependencies
 var restful = require('node-restful');
-var mongoose = require('mongoose');
+var mongoose = restful.mongoose;
 
 // Schema
 var productSchema = new mongoose.Schema({
